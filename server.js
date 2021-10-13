@@ -37,8 +37,17 @@ app.get('/book_event', async (req, res) => {
     console.log("email: " + email);
     var str1 = email + " " + phone_number + " " + eventId + " Booked successfully";
     console.log("phNo: " + phone_number);  
+    var objects = new Array();
+    var objects = new Array();
+    var obj = {
+        "name":"The Comedy Club",
+        "time":"30th April, 2021",
+        "place":"Arangum",
+        "eventId":"2"
+    };
+    objects.push(obj);
     var sendData = {
-        str1
+        objects
     };
     res.end(JSON.stringify(sendData));  
  });
@@ -55,8 +64,19 @@ app.get('/book_event', async (req, res) => {
     }
     console.log("email: " + email);
     console.log("phNo: " + phone_number);  
+    
+    var objects = new Array();
+    for(var i = 0; i < arr.length; i++) {
+        var obj = {
+            "name":arr[i][0],
+            "time":arr[i][1],
+            "place":arr[i][2],
+            "eventId":arr[i][3]
+        };
+        objects.push(obj);
+    }
     var sendData = {
-        arr
+        objects
     };
     res.end(JSON.stringify(sendData));  
  });
@@ -78,8 +98,18 @@ app.get('/book_event', async (req, res) => {
     }
     console.log("email: " + email);
     console.log("phNo: " + phone_number);  
+    var objects = new Array();
+    for(var i = 0; i < arr.length; i++) {
+        var obj = {
+            "name":arr[i][0],
+            "time":arr[i][1],
+            "place":arr[i][2],
+            "eventId":arr[i][3]
+        };
+        objects.push(obj);
+    }
     var sendData = {
-        arr
+        objects
     };
     res.end(JSON.stringify(sendData));  
  });
