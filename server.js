@@ -34,7 +34,7 @@ app.get('/book_event', async (req, res) => {
         se.add(eventId);
         usersBooked.set(str, se);
     }
-    console.log("email: " + email);
+    console.log("email: " + email); // Checking if the email is correct
     var str1 = email + " " + phone_number + " " + eventId + " Booked successfully";
     console.log("phNo: " + phone_number);  
     var objects = new Array();
